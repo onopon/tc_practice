@@ -1,0 +1,38 @@
+version: '3'
+services:
+  app:
+    ports:
+      - "8000:80"
+    build: ./docker/app
+    container_name: laravel_app
+    volumes:
+      - ./:/var/www/html
+    healthcheck:
+      test: ["CMD", "curl -f http://localhost/"]
+      interval: "1s"
+      timeout: "1s"
+      retries: 0
+  db:
+    image: mysql:5.7
+    container_name: laravel_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: laravel_db
+      MYSQL_USER: laravel_user
+      MYSQL_PASSWORD: laravel_pass
+      TZ: 'Asia/Tokyo'
+    platform: linux/x86_64
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - ./docker/db/data:/var/lib/mysql
+      - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+    ports:
+      - 3306:3306
+  phpunit:
+    build: ./docker/phpunit
+    container_name: laravel_phpunit
+    depends_on:
+      - app
+    volumes:
+      - ./tc_practice/:/app
+    tty: true
