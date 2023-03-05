@@ -4,7 +4,7 @@ services:
     ports:
       - "8000:80"
     build: ./docker/app
-    container_name: laravel_app
+    container_name: tc_practice_app
     volumes:
       - ./:/var/www/html
     healthcheck:
@@ -14,25 +14,26 @@ services:
       retries: 0
   db:
     image: mysql:5.7
-    container_name: laravel_db
+    container_name: tc_practice_db
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: laravel_db
-      MYSQL_USER: laravel_user
-      MYSQL_PASSWORD: laravel_pass
+      MYSQL_DATABASE: tc_practice
+      MYSQL_USER: tc_user
+      MYSQL_PASSWORD: tc_user
       TZ: 'Asia/Tokyo'
     platform: linux/x86_64
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     volumes:
       - ./docker/db/data:/var/lib/mysql
       - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./docker/db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     ports:
       - 3306:3306
   phpunit:
     build: ./docker/phpunit
-    container_name: laravel_phpunit
+    container_name: tc_practice_phpunit
     depends_on:
       - app
     volumes:
-      - ./tc_practice/:/app
+      - ./:/app
     tty: true

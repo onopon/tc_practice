@@ -11,7 +11,8 @@ RUN cd /usr/bin && curl -s http://getcomposer.org/installer | php && ln -s /usr/
 RUN apt-get update \
 && apt-get install -y \
 git \
-vim
+vim \
+default-mysql-client-core
 
 WORKDIR /app
 SHELL ["/bin/bash", "-c"]
