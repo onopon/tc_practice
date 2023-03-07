@@ -4,7 +4,7 @@ services:
     ports:
       - "8000:80"
     build: ./docker/app
-    container_name: tc_practice_app
+    container_name: tc-practice-app
     volumes:
       - ./:/var/www/html
     healthcheck:
@@ -14,7 +14,7 @@ services:
       retries: 0
   db:
     image: mysql:5.7
-    container_name: tc_practice_db
+    container_name: tc-practice-db
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: tc_practice
@@ -31,7 +31,7 @@ services:
       - 3306:3306
   phpunit:
     build: ./docker/phpunit
-    container_name: tc_practice_phpunit
+    container_name: tc-practice-phpunit
     depends_on:
       - app
     volumes:
