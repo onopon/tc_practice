@@ -12,7 +12,8 @@ RUN apt-get update \
 && apt-get install -y \
 git \
 vim \
-default-mysql-client-core
+default-mysql-client-core \
+&& docker-php-ext-install pdo_mysql
 
 WORKDIR /app
 SHELL ["/bin/bash", "-c"]
