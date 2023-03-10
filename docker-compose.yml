@@ -12,6 +12,8 @@ services:
       interval: "1s"
       timeout: "1s"
       retries: 0
+    environment:
+      TZ: 'Asia/Tokyo'
   db:
     image: mysql:5.7
     container_name: tc-practice-db
@@ -20,6 +22,7 @@ services:
       MYSQL_DATABASE: tc_practice
       MYSQL_USER: tc_user
       MYSQL_PASSWORD: tc_user
+      MYSQL_TCP_PORT: 3307
       TZ: 'Asia/Tokyo'
     platform: linux/x86_64
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
@@ -28,10 +31,14 @@ services:
       - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
       - ./docker/db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     ports:
-      - 3306:3306
+      - 3307:3306
+    expose:
+      - 3307
   phpunit:
     build: ./docker/phpunit
     container_name: tc-practice-phpunit
+    environment:
+      TZ: 'Asia/Tokyo'
     depends_on:
       - app
     volumes:
