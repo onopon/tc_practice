@@ -1,0 +1,1 @@
+docker compose exec db bash -c "mysql -htc-practice-db -utc_user -ptc_user -D tc_practice"
