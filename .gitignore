@@ -1,4 +1,5 @@
 *.sw*
+.DS_Store
 /vendor/
 node_modules/
 npm-debug.log
@@ -18,9 +19,12 @@ public_html/hot
 
 storage/*.key
 .env
+.env.testing
 Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+.phpunit.cache
 
 docker/db/data
+storage/coverage
