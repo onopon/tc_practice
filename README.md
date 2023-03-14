@@ -1,4 +1,4 @@
-<p align="center"><span style="font-size: 200%;color: #7f7fff"><b>TC</b>practice</span></p>
+<p align="center"><span style="font-size: 400%"><font color="#7f7fff"><b>TC</b>practice</font></span></p>
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="200"></a></p>
 
