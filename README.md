@@ -15,9 +15,9 @@
 
 このリポジトリのソースコード内の至るところにクイズ形式で散りばめております。
 
-クイズの一覧は、 [ANSWERME.md](https://github.com/onopon/tc_practice/blob/master/ANSWERME.md){:target="_blank"} に記載しております。
+クイズの一覧は、 ![ANSWERME.md](https://github.com/onopon/tc_practice/blob/master/ANSWERME.md) に記載しております。
 
-また本クイズを進める上で必要となるディレクトリの構造は、 [DIRECTORY_STRUCTURE.txt](https://github.com/onopon/tc_practice/blob/master/DIRECTORY_STRUCTURE.txt){:target="_blank"} をご確認ください。
+また本クイズを進める上で必要となるディレクトリの構造は、 ![DIRECTORY_STRUCTURE.txt](https://github.com/onopon/tc_practice/blob/master/DIRECTORY_STRUCTURE.txt) をご確認ください。
 
 ## ページ構成
 
