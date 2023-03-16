@@ -12,9 +12,12 @@
 ## TC practiceとは
 
 テストコードの書き方を学びたい人向けのチュートリアルリポジトリです。
+
 このリポジトリのソースコード内の至るところにクイズ形式で散りばめております。
-クイズの一覧は、 ANSWERME.md に記載しております。
-また本クイズを進める上で必要となるディレクトリの構造は、 DIRECTORY_STRUCTURE.md をご確認ください。
+
+クイズの一覧は、 [ANSWERME.md](https://github.com/onopon/tc_practice/blob/master/ANSWERME.md){:target="_blank"} に記載しております。
+
+また本クイズを進める上で必要となるディレクトリの構造は、 [DIRECTORY_STRUCTURE.txt](https://github.com/onopon/tc_practice/blob/master/DIRECTORY_STRUCTURE.txt){:target="_blank"} をご確認ください。
 
 ## ページ構成
 
@@ -23,14 +26,19 @@
 #### http://localhost:8000/user/login
 
 ログインページです。
+
 ユーザIDとパスワードの入力フォームが用意されております。
+
 ユーザID、パスワードを入力、Loginボタンを押下後、正しい場合は http://localhost:8000/ に遷移します。
+
 ユーザIDが存在しない、パスワードが誤っている場合は本urlにリダイレクトされます。
 
 #### http://localhost:8000/
 
 ログインユーザのアカウント情報ページです。
+
 ユーザ名、ユーザID、役職、誕生日、星座が表示されます。
+
 Logoutボタンを押下すると、 http://localhost:8000/user/login に遷移します。
 
 ## 環境構築方法
@@ -46,11 +54,11 @@ sh ./initial_run.sh
 
 local, testingの2つの環境を作成することができます。
 
-#### local
+### local
 
 ブラウザ上でページの動作確認を行うために利用します。
 
-#### testing
+### testing
 
 CUI上で、用意したテストの実行を行うために利用します。
 
@@ -65,8 +73,11 @@ local環境で利用します。ページの挙動をブラウザ上で確認で
 ### db
 
 local, testing環境で利用します。
+
 利用するdbが環境により異なり、
+
 local環境ではtc_practiceが利用され、
+
 testing環境ではtc_practice_testingが利用されます。
 
 ### phpunit
@@ -94,6 +105,7 @@ docker-compose down
 ## dockerコンテナ内でbashシェルを利用する方法
 
 用途に応じて書きのコマンドを実行してください。
+
 コンテナから抜ける場合は、 exit を実行してください。
 
 ### appコンテナに入りたい場合
@@ -119,6 +131,7 @@ docker-compose exec phpunit bash
 ## 便利なコマンド
 
 いくつかコマンドを用意しました。
+
 状況に応じて是非活用してください。
 
 #### ./mysql
@@ -128,6 +141,7 @@ docker-compose exec phpunit bash
 #### ./phpunit
 
 `./phpunit` と実行すると、全テストを順番に実行していきます。
+
 `./phpunit tests/Unit/Librariees/UserUtilTest.php` のように指定したファイルのみテストを実行することもできます。
 
 #### docker compose exec phpunit bash
