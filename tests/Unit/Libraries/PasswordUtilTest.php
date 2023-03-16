@@ -13,8 +13,9 @@ class PasswordUtilTest extends TestCase
         $plain = 'password';
         $hash = $pu->toHash($plain);
         // Q1 - 1. $hashが文字列であることをテストしてください。
-
+        $this->assertIsString($hash);
         // Q1 - 2. $plainと$hashの値が異なることをテストしてください。
+        $this->assertNotEquals($plain, $hash);
 
     }
 
@@ -30,5 +31,8 @@ class PasswordUtilTest extends TestCase
     {
         // Q2. test_isCorrectTrueを参考にして、
         //     isCorrectメソッドがfalseになる状況となるテストコードを書いてください。
+        $pu = new PasswordUtil();
+        $hash = $pu->toHash("password");
+        $this->assertFalse($pu->isCorrect("wrong password", $hash));
     }
 }
