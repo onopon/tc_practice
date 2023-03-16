@@ -19,6 +19,7 @@
 ## ページ構成
 
 大きく下記の2ページが用意されています。
+
 #### http://localhost:8000/user/login
 
 ログインページです。
@@ -26,7 +27,7 @@
 ユーザID、パスワードを入力、Loginボタンを押下後、正しい場合は http://localhost:8000/ に遷移します。
 ユーザIDが存在しない、パスワードが誤っている場合は本urlにリダイレクトされます。
 
-### http://localhost:8000/
+#### http://localhost:8000/
 
 ログインユーザのアカウント情報ページです。
 ユーザ名、ユーザID、役職、誕生日、星座が表示されます。
@@ -36,7 +37,10 @@ Logoutボタンを押下すると、 http://localhost:8000/user/login に遷移�
 
 1. Dockerコマンドを利用できる状況にしてください
 2. 下記コマンドを実行してください。必要なdockerを立ち上げ、初期準備（migrationやテストユーザの作成など)をしてくれます。
+
+```
 sh ./initial_run.sh
+```
 
 ## initial_run.sh によりできる環境
 
@@ -54,18 +58,18 @@ CUI上で、用意したテストの実行を行うために利用します。
 
 app, db, phpunitの3つのdockerが立ち上がります。
 
-#### app
+### app
 
 local環境で利用します。ページの挙動をブラウザ上で確認できるようにするためのdockerです。
 
-#### db
+### db
 
 local, testing環境で利用します。
 利用するdbが環境により異なり、
 local環境ではtc_practiceが利用され、
 testing環境ではtc_practice_testingが利用されます。
 
-#### phpunit
+### phpunit
 
 testing環境で利用します。CUI上でテストが実行できるようにするためのdockerです。
 
@@ -73,15 +77,19 @@ testing環境で利用します。CUI上でテストが実行できるように�
 
 下記コマンドを実行してください。
 
+```
 docker-compose up -d
+```
 
-sh ./initial_run.sh でも立ち上がってはくれますが、様々な処理を挟むため時間がかかります。
+`sh ./initial_run.sh` でも立ち上がってはくれますが、様々な処理を挟むため時間がかかります。
 
 ## dockerの終了のさせ方
 
 下記コマンドを実行してください。
 
+```
 docker-compose down
+```
 
 ## dockerコンテナ内でbashシェルを利用する方法
 
@@ -90,31 +98,37 @@ docker-compose down
 
 ### appコンテナに入りたい場合
 
+```
 docker-compose exec app bash
+```
 
 ### dbコンテナに入りrootでmysqlを起動したい場合
 
+```
 docker-compose exec db bash
 mysql -uroot -proot
+```
 
 ### phpunitコンテナに入りテストを手動で実行したい場合
 
+```
 docker-compose exec phpunit bash
 ./vendor/bin/phpunit
+```
 
 ## 便利なコマンド
 
 いくつかコマンドを用意しました。
 状況に応じて是非活用してください。
 
-#### mysql
+#### ./mysql
 
-./mysql と実行すると、mysqlに接続できます。
+`./mysql` と実行すると、mysqlに接続できます。
 
-#### phpunit
+#### ./phpunit
 
-./phpunit と実行すると、全テストを順番に実行していきます。
-./phpunit tests/Unit/Librariees/UserUtilTest.php のように指定したファイルのみテストを実行することもできます。
+`./phpunit` と実行すると、全テストを順番に実行していきます。
+`./phpunit tests/Unit/Librariees/UserUtilTest.php` のように指定したファイルのみテストを実行することもできます。
 
 #### docker compose exec phpunit bash
 
@@ -123,11 +137,18 @@ exit と入力することで本bashから抜けることができます。
 
 #### php artisan create:user
 
-※ 本コマンドは docker compose exec phpunit bash上で行ってください。
+※ 本コマンドは `docker compose exec phpunit bash` 上で行ってください。
+
 任意のユーザを作成することができます。
 実行されるコマンドの中身は、
+
 app/Console/Commands/CreateUser.php
+
 をご確認ください。
 オプションを与えることで、初期値意外のデータで作成することができます。
+
 ex)
+
+```
 php artisan create:user --loginId=hoge
+```
