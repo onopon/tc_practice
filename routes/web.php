@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [UserController::class, 'mypage'])->middleware('auth');
+Route::get('/user/login', [UserController::class, 'login'])->name('login');
+Route::post('/user/login', [LoginController::class, 'attempt']);
+Route::post('/user/logout', [LogoutController::class, 'attempt']);

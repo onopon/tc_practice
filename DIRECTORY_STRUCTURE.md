@@ -1,0 +1,39 @@
+tc_practice
+|-- ANSWERME.md
+|-- README.md
+|-- app
+|   |-- Console
+|   |   `-- Commands
+|   |-- Exceptions
+|   |-- Http
+|   |   `-- Controllers
+|   |-- Libraries
+|   `-- Models
+|-- create_user.sh: スクリプトです
+|-- database
+|   |-- factories
+|   |-- migrations: tableがどのように作られるかなどはこちらで確認できます
+|   `-- seeders: テスト実行時の初期データを作るファイルはここに置かれています
+|-- initial_run.sh: スクリプトです
+|-- mysql: スクリプトです
+|-- phpunit: スクリプトです
+|-- phpunit.xml: phpunitの設定ファイルです
+|-- public
+|   `-- css
+|-- resources
+|   `-- views
+|       |-- common
+|       `-- user
+|-- routes
+|   `-- web.php
+|-- storage
+|   `-- logs
+|-- test: スクリプトです
+`-- tests
+    |-- Feature: 1リクエスト、1フローといった粒度の大きい単位のテストです
+    |   |-- Commands
+    |   `-- Controllers
+    |-- Unit: LibrariesやModelsといった粒度の細かいテストです
+    |   |-- Libraries
+    |   `-- Models
+    `-- Util: Test実行時にあると便利な関数を置いています（本ディレクトリはテストコードとしては実行されません）

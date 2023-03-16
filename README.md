@@ -1,4 +1,4 @@
-<p align="center"><span style="font-size: 400%"><font color="#7f7fff"><b>TC</b>practice</font></span></p>
+# TC practice
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="200"></a></p>
 
@@ -9,58 +9,125 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## TC practiceとは
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+テストコードの書き方を学びたい人向けのチュートリアルリポジトリです。
+このリポジトリのソースコード内の至るところにクイズ形式で散りばめております。
+クイズの一覧は、 ANSWERME.md に記載しております。
+また本クイズを進める上で必要となるディレクトリの構造は、 DIRECTORY_STRUCTURE.md をご確認ください。
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ページ構成
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+大きく下記の2ページが用意されています。
+#### http://localhost:8000/user/login
 
-## Learning Laravel
+ログインページです。
+ユーザIDとパスワードの入力フォームが用意されております。
+ユーザID、パスワードを入力、Loginボタンを押下後、正しい場合は http://localhost:8000/ に遷移します。
+ユーザIDが存在しない、パスワードが誤っている場合は本urlにリダイレクトされます。
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### http://localhost:8000/
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+ログインユーザのアカウント情報ページです。
+ユーザ名、ユーザID、役職、誕生日、星座が表示されます。
+Logoutボタンを押下すると、 http://localhost:8000/user/login に遷移します。
 
-## Laravel Sponsors
+## 環境構築方法
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+1. Dockerコマンドを利用できる状況にしてください
+2. 下記コマンドを実行してください。必要なdockerを立ち上げ、初期準備（migrationやテストユーザの作成など)をしてくれます。
+sh ./initial_run.sh
 
-### Premium Partners
+## initial_run.sh によりできる環境
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+local, testingの2つの環境を作成することができます。
 
-## Contributing
+#### local
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+ブラウザ上でページの動作確認を行うために利用します。
 
-## Code of Conduct
+#### testing
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+CUI上で、用意したテストの実行を行うために利用します。
 
-## Security Vulnerabilities
+## initial_run.sh により立ち上がるdocker
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+app, db, phpunitの3つのdockerが立ち上がります。
 
-## License
+#### app
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+local環境で利用します。ページの挙動をブラウザ上で確認できるようにするためのdockerです。
+
+#### db
+
+local, testing環境で利用します。
+利用するdbが環境により異なり、
+local環境ではtc_practiceが利用され、
+testing環境ではtc_practice_testingが利用されます。
+
+#### phpunit
+
+testing環境で利用します。CUI上でテストが実行できるようにするためのdockerです。
+
+## 2回目以降の立ち上げ方法
+
+下記コマンドを実行してください。
+
+docker-compose up -d
+
+sh ./initial_run.sh でも立ち上がってはくれますが、様々な処理を挟むため時間がかかります。
+
+## dockerの終了のさせ方
+
+下記コマンドを実行してください。
+
+docker-compose down
+
+## dockerコンテナ内でbashシェルを利用する方法
+
+用途に応じて書きのコマンドを実行してください。
+コンテナから抜ける場合は、 exit を実行してください。
+
+### appコンテナに入りたい場合
+
+docker-compose exec app bash
+
+### dbコンテナに入りrootでmysqlを起動したい場合
+
+docker-compose exec db bash
+mysql -uroot -proot
+
+### phpunitコンテナに入りテストを手動で実行したい場合
+
+docker-compose exec phpunit bash
+./vendor/bin/phpunit
+
+## 便利なコマンド
+
+いくつかコマンドを用意しました。
+状況に応じて是非活用してください。
+
+#### mysql
+
+./mysql と実行すると、mysqlに接続できます。
+
+#### phpunit
+
+./phpunit と実行すると、全テストを順番に実行していきます。
+./phpunit tests/Unit/Librariees/UserUtilTest.php のように指定したファイルのみテストを実行することもできます。
+
+#### docker compose exec phpunit bash
+
+phpunit docker上でbashを実行できるようになります。
+exit と入力することで本bashから抜けることができます。
+
+#### php artisan create:user
+
+※ 本コマンドは docker compose exec phpunit bash上で行ってください。
+任意のユーザを作成することができます。
+実行されるコマンドの中身は、
+app/Console/Commands/CreateUser.php
+をご確認ください。
+オプションを与えることで、初期値意外のデータで作成することができます。
+ex)
+php artisan create:user --loginId=hoge
