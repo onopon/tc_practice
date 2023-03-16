@@ -118,7 +118,7 @@ app/Models/User.php
 お疲れ様でした！
 
 ```
-git diff master answer
+git diff master origin/answer
 ```
 
 などを行い、ぜひ回答例とどのような差があるのかを確認してみてください。
