@@ -29,5 +29,8 @@ class LogoutControllerTest extends TestCase
         // 　 ・ページ遷移はどうなるのか
         //  　・Auth::user()はどうなるのか
         // 　 をassertで表現してください。
+        $response->assertStatus(302)
+            ->assertRedirect('/');
+        $this->assertNull(Auth::user());
     }
 }

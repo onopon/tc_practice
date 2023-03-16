@@ -23,7 +23,6 @@ class RoleTest extends TestCase
     public function test_existsRoleDoesNotExist()
     {
         // Q3 - 2 markTestSkipped メソッドを削除しても、本テストケースが通ることを確認してください。
-        $this->markTestSkipped('skip');
         $this->assertFalse(Role::exists(1));
     }
 }

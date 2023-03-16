@@ -39,5 +39,17 @@ class LoginControllerTest extends TestCase
     public function test_attemptFailed()
     {
         // Q7 本テストケースを埋めてください。
+        $loginId = "loginId";
+        $password = "password";
+        $response = $this->post(
+            '/user/login',
+            [
+                'login_id' => $loginId,
+                'password' => $password
+            ]
+        );
+        $response->assertStatus(302)
+            ->assertRedirect('/');
+        $this->assertNull(Auth::user());
     }
 }

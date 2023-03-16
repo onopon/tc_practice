@@ -92,6 +92,33 @@ class User extends Authenticatable
     public function getSign()
     {
         // Q9 - 1 本メソッドのロジックを書いてください。
-        return '乙女座';
+        $datetime = new DateTime($this->birthday);
+        $monthDate = (int)"{$datetime->format('n')}{$datetime->format('j')}";
+        if ((int)"0121" <= $monthDate && $monthDate <= (int)"0218") {
+            return "水瓶座";
+        } elseif ((int)"0219" <= $monthDate && $monthDate <= (int)"0320") {
+            return "魚座";
+        } elseif ((int)"0321" <= $monthDate && $monthDate <= (int)"0419") {
+            return "牡羊座";
+        } elseif ((int)"0420" <= $monthDate && $monthDate <= (int)"0520") {
+            return "牡牛座";
+        } elseif ((int)"0521" <= $monthDate && $monthDate <= (int)"0621") {
+            return "双子座";
+        } elseif ((int)"0622" <= $monthDate && $monthDate <= (int)"0722") {
+            return "蟹座";
+        } elseif ((int)"0723" <= $monthDate && $monthDate <= (int)"0822") {
+            return "獅子座";
+        } elseif ((int)"0823" <= $monthDate && $monthDate <= (int)"0922") {
+            return "乙女座";
+        } elseif ((int)"0923" <= $monthDate && $monthDate <= (int)"1023") {
+            return "天秤座";
+        } elseif ((int)"1024" <= $monthDate && $monthDate <= (int)"1122") {
+            return "蠍座";
+        } elseif ((int)"1123" <= $monthDate && $monthDate <= (int)"1221") {
+            return "射手座";
+        } else {
+            // 1222 - 0120
+            return "山羊座";
+        }
     }
 }

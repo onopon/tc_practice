@@ -30,6 +30,6 @@ class Role extends Model
     public static function exists($roleId)
     {
         // Q3 - 1 tests/Unit/Models/RoleTest.php のテストケースをパスできるようにロジックを書いてください。
-        return true;
+        return self::where('id', '=', $roleId)->exists();
     }
 }
