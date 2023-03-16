@@ -1,64 +1,87 @@
 # TC Practice問題集
 
 下記の流れに沿って、実践してみてください。
+
 問題は全部で10問あります。
+
 回答例はanswerブランチにも用意しましたので、できたら照らし合わせてみてください。
+
 ※ 回答例と必ずしも一致しないといけないわけではありません。
+
 　自身のコードとの差異を発見と捉え、楽しみながら確認してみてください^^
 
 ## Q1
 
 tests/Unit/Libraries/PasswordUtilTest.php
+
 に存在するtest_toHashのテストケースを完成させてください。
 
 ロジックは、
+
 app/Libraries/PasswordUtil.php
+
 で確認できます。
 
 ## Q2
 
 tests/Unit/Libraries/PasswordUtilTest.php
+
 に存在するtest_isCorrectFalseのテストケースを完成させてください。
 
 ## Q3
 
 app/Models/Role.php
+
 に存在するexistsメソッドのロジックを完成させ、skipしているテストコードが通るようにしてください。
 
 ## Q4
 
 tests/Unit/Models/UserTest.php
+
 に存在するtest_register内でユーザ名がおのぽんとなっている箇所があります。
+
 しかし、実際に本メソッドが利用される際、ユーザ名がおのぽんである必要はなく、ユーザ名がおのぽんでない可能性が高いため、
+
 テストとしてはもう一歩という状況です。
+
 そこで、Fakerを利用し、ユーザ名がテストを実行する度にランダムな名前が実行されるようにしてください。
 
 ## Q5
 
 tests/Unit/Models/UserTest.php
+
 に存在するtest_findWithPasswordFailedのテストケースを完成させてください。
+
 ※ ただし、ロジックは正しいものとします。
+
 
 このテストケースでは、「ログインIDは合っているけど、passowrdに誤りがある」場合のテストケースを書こうとしています。
 
 ## Q6
 
 tests/Feature/Controllers/LogoutControllerTest.php
+
 にてtest_attemptのテストケースを完成させてください。
 
 ## Q7
 
 tests/Feature/Controllers/LoginControllerTest.php
+
 にてtest_attemptFailedのテストケースを完成させてください。
+
 現段階ではtest_attemptFailedとなるケースは1パターンだけ考えていただければ大丈夫です。
 
 ## Q8
 
 Q7にて、「test_attemptFailedとなるケースは1パターンだけ考えていただければ大丈夫です。」と記載しました。
+
 しかし、ログインが失敗するケースとしては、
+
 - ログインIDが存在しない
 - ログインパスワードが異なる
+
 の2パターンが存在します。
+
 なぜ1パターンだけ考えれば良いのか、下記にお答えください。
 
 A. xxxxxxxxxxなため。
@@ -66,7 +89,9 @@ A. xxxxxxxxxxなため。
 ## Q9
 
 app/Models/User.php
+
 に存在する getSign メソッドと対応するテストコードを完成させてください。
+
 星座は下記をご参考にしてください。
 
 #### 星座一覧
@@ -92,8 +117,12 @@ app/Models/User.php
 
 お疲れ様でした！
 
+```
 git diff master answer
+```
 
 などを行い、ぜひ回答例とどのような差があるのかを確認してみてください。
+
 新たな気づきや発見につながりますと幸いです。
+
 最後までご回答いただきありがとうございました！
