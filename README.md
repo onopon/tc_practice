@@ -1,4 +1,4 @@
-# TC practice
+# TC practice ~初めてテストコードを書く人へ~
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="200"></a></p>
 
@@ -11,7 +11,12 @@
 
 ## TC practiceとは
 
-テストコードの書き方を学びたい人向けのチュートリアルリポジトリです。
+本リポジトリは、テストコードの書き方を学びたい人向けのチュートリアルリポジトリです。
+
+主に、下記の方向けとなります。
+
+- テストコードはなんとなく知っているけど、どのように書いていけばいいかがわからない
+- プロジェクトでテストコードを導入するために、チームみんながテストコードを書ける状態を作りたい
 
 テストコードそのものを知らない方は、 [WHAT_IS_TESTCODE.md](/WHAT_IS_TESTCODE.md) をご一読ください。
 
