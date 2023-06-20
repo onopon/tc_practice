@@ -2,7 +2,7 @@
 @section('title', 'マイページ')
 @section('content')
 @section('css')
-<link rel="stylesheet" href="{{ asset('/css/user/mypage.css') }}?1"/>
+<link rel="stylesheet" href="{{ asset('/css/user/mypage.css') }}"/>
 @endsection
 <div class="container-fluid">
     <div class="row">
@@ -13,6 +13,14 @@
                 <p>役職: {{ $user->getRoleName() }}</p>
                 <p>誕生日: {{ $user->birthday }}</p>
                 <p>星座: {{ $user->getSign() }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-4 col-4 mt-5">
+            <div class="info forecast">
+                <h2>今日の天気</h2>
+                <textarea id="forecast" rows="10" cols="45" readonly>{{ $forecast }}</textarea>
             </div>
         </div>
     </div>

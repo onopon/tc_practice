@@ -32,3 +32,19 @@ h1 {
   font-weight: bold;
   color:#7f7fff;
 }
+
+h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color:#ff7f7f;
+}
+
+textarea#forecast {
+  border: 4px solid #ffddee;
+  border-radius:6px;
+  padding-top: 0.5em;
+  font-size: 1em;
+  line-height: 1.2;
+  color: #666666;
+  width: 100%;
+}
