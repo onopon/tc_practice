@@ -46,4 +46,5 @@ textarea#forecast {
   font-size: 1em;
   line-height: 1.2;
   color: #666666;
+  width: 100%;
 }
