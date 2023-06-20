@@ -16,13 +16,16 @@ class ForecastTest extends TestCase
                          ->andReturn(200);
         // Q11 - 1 \GuzzleHttp\Clientのrequest->getBody->getContentsをmockし、
         // もしgetContentsがロジック内で呼ばれたら、$this->getDummyJson() が返るようにしてください。
-
+        $mock->shouldReceive('request->getBody->getContents')
+                         ->once()
+                         ->andReturn($this->getDummyJson());
         $this->markTestSkipped('skip');
+
         $f = new Forecast();
         $code = 12345;
         $result = $f->loadOverviewText($code);
         // Q11 - 2 $this->getDummyJson()のtextが$resultで返ってくるテストを書いてください。
-
+        $this->assertEquals(json_decode($this->getDummyJson(), true)['text'], $result);
     }
 
     public function test_loadOverviewText_apiResult404()
