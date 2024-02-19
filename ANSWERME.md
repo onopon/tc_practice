@@ -117,11 +117,18 @@ app/Models/User.php
 
 全体のテストを実行した際のカバレッジを100%にしてください。
 
-## Q11 (2023/06/20 updated)
+## Q11 (2024/02/20 updated)
 
-GuzzleHttpをMockeryを使って、loadOverviewTextのテストを書いてください。
+app/Libraries/Api/Forecast.php
+
+に存在するloadOverviewTextのテストを書いてください。
+
+その際、Mockeryを利用しGuzzleHttpをmockしてください。
+
 mockの仕方はtest_loadOverviewText_apiResult404を参考にしてください。
-\GuzzleHttp\Clientのrequest->getBody->getContentsをmockし、もしgetContentsがロジック内で呼ばれたら、$this->getDummyJson()
+
+\GuzzleHttp\Clientのrequest->getBody->getContents をmockし、もしgetContentsがロジック内で呼ばれたら、$this->getDummyJson()
+
 が呼ばれるようにしてください。
 
 ---
