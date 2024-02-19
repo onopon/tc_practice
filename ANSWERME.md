@@ -119,13 +119,11 @@ app/Libraries/Api/Forecast.php
 
 に存在するloadOverviewTextのテストを書いてください。
 
-その際、Mockeryを利用しGuzzleHttpをmockしてください。
+その際Mockeryを利用し、\GuzzleHttp\Clientのrequest->getBody->getContents をmockし、
 
-mockの仕方はtest_loadOverviewText_apiResult404を参考にしてください。
+もしgetContentsがロジック内で呼ばれたら、$this->getDummyJson() が呼ばれるようにしてください。
 
-\GuzzleHttp\Clientのrequest->getBody->getContents をmockし、もしgetContentsがロジック内で呼ばれたら、$this->getDummyJson()
-
-が呼ばれるようにしてください。
+（mockの仕方はtest_loadOverviewText_apiResult404を参考にしてください。）
 
 ---
 
