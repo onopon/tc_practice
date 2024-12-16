@@ -73,7 +73,7 @@ class UserTest extends TestCase
 
     public function test_getSign()
     {
-        // Q9 - 2  本テストケースを書き直してください。
+        // Q11 - 2  本テストケースを書き直してください。
         $user = $this->registerUser();
         $this->assertEquals('乙女座', $user->getSign());
     }

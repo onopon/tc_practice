@@ -88,6 +88,24 @@ A. xxxxxxxxxxなため。
 
 ## Q9
 
+app/Libraries/Api/Forecast.php
+
+に存在するloadOverviewTextのテストを書いてください。
+
+その際Mockeryを利用し、\GuzzleHttp\Clientのrequest->getBody->getContents をmockし、
+
+もしgetContentsがロジック内で呼ばれたら、$this->getDummyJson() が呼ばれるようにしてください。
+
+（mockの仕方はtest_loadOverviewText_apiResult404を参考にしてください。）
+
+## Q10
+
+tests/Feature/Controllers/MyPageControllerTest.php
+
+に存在するtest_mypageのテストケースを完成させ、skipを解除してください。
+
+## Q11
+
 app/Models/User.php
 
 に存在する getSign メソッドと対応するテストコードを完成させてください。
@@ -109,21 +127,9 @@ app/Models/User.php
 - 水瓶座: 01/21 - 02/18
 - 魚座  : 02/19 - 03/20
 
-## Q10
+## Q12（もともと10だった）
 
 全体のテストを実行した際のカバレッジを100%にしてください。
-
-## Q11 (2024/02/20 updated)
-
-app/Libraries/Api/Forecast.php
-
-に存在するloadOverviewTextのテストを書いてください。
-
-その際Mockeryを利用し、\GuzzleHttp\Clientのrequest->getBody->getContents をmockし、
-
-もしgetContentsがロジック内で呼ばれたら、$this->getDummyJson() が呼ばれるようにしてください。
-
-（mockの仕方はtest_loadOverviewText_apiResult404を参考にしてください。）
 
 ---
 
