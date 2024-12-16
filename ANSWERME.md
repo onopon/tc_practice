@@ -10,7 +10,7 @@
 
 　自身のコードとの差異を発見と捉え、楽しみながら確認してみてください^^
 
-## Q1
+## Q1 ☆
 
 tests/Unit/Libraries/PasswordUtilTest.php
 
@@ -22,19 +22,19 @@ app/Libraries/PasswordUtil.php
 
 で確認できます。
 
-## Q2
+## Q2 ☆
 
 tests/Unit/Libraries/PasswordUtilTest.php
 
 に存在するtest_isCorrectFalseのテストケースを完成させてください。
 
-## Q3
+## Q3 ☆
 
 app/Models/Role.php
 
 に存在するexistsメソッドのロジックを完成させ、skipしているテストコードが通るようにしてください。
 
-## Q4
+## Q4 ☆
 
 tests/Unit/Models/UserTest.php
 
@@ -57,13 +57,13 @@ tests/Unit/Models/UserTest.php
 
 このテストケースでは、「ログインIDは合っているけど、passowrdに誤りがある」場合のテストケースを書こうとしています。
 
-## Q6
+## Q6 ☆
 
 tests/Feature/Controllers/LogoutControllerTest.php
 
 にてtest_attemptのテストケースを完成させてください。
 
-## Q7
+## Q7 ☆
 
 tests/Feature/Controllers/LoginControllerTest.php
 
@@ -86,7 +86,7 @@ Q7にて、「test_attemptFailedとなるケースは1パターンだけ考え�
 
 A. xxxxxxxxxxなため。
 
-## Q9
+## Q9 ☆
 
 app/Libraries/Api/Forecast.php
 
@@ -98,7 +98,7 @@ app/Libraries/Api/Forecast.php
 
 （mockの仕方はtest_loadOverviewText_apiResult404を参考にしてください。）
 
-## Q10
+## Q10 ☆
 
 tests/Feature/Controllers/MyPageControllerTest.php
 
