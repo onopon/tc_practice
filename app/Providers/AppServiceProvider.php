@@ -14,6 +14,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        if ($this->app->environment('testing')) {
+            // テスト環境では別途モックを登録するため、スキップ
+            return;
+        }
         $this->app->singleton(Forecast::class, Forecast::class);
     }
 
