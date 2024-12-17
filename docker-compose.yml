@@ -16,6 +16,8 @@ services:
       retries: 0
     environment:
       TZ: 'Asia/Tokyo'
+    depends_on:
+      - db
 
   db:
     networks:
@@ -48,7 +50,7 @@ services:
     environment:
       TZ: 'Asia/Tokyo'
     depends_on:
-      - app
+      - db
     volumes:
       - ./:/src
     tty: true
