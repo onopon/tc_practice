@@ -17,7 +17,8 @@ services:
     environment:
       TZ: 'Asia/Tokyo'
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   db:
     networks:
@@ -41,6 +42,11 @@ services:
       - 3307:3306
     expose:
       - 3307
+  healthcheck:
+    test: "mysqladmin ping -h 127.0.0.1 -u root -p$$MYSQL_ROOT_PASSWORD"
+    timeout: 5s
+    interval: 5s
+    retries: 10
 
   phpunit:
     networks:
@@ -50,7 +56,8 @@ services:
     environment:
       TZ: 'Asia/Tokyo'
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     volumes:
       - ./:/src
     tty: true
