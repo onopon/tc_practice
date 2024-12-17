@@ -43,7 +43,10 @@ class UserControllerTest extends TestCase
         // Q10. 定義されたforecastMockを使って、コントローラ内で利用されるForecastクラスの
         //      loadOverviewTextメソッドが呼び出されたときに、'dummy text'を返すように設定してください。
         //      skipを外してテストが実行できるようにしてください。
-        $this->markTestSkipped('skip');
+        $this->forecastMock
+             ->shouldReceive('loadOverviewText')
+             ->once()
+             ->andReturn('dummy text');
 
         // forecastMockをコントローラ内のforecastの変わりに利用されるように設定
         $this->app->singleton(Forecast::class, function () {

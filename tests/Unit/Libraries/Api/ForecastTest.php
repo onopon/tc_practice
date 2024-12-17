@@ -19,7 +19,6 @@ class ForecastTest extends TestCase
         $mock->shouldReceive('request->getBody->getContents')
                          ->once()
                          ->andReturn($this->getDummyJson());
-        $this->markTestSkipped('skip');
 
         $f = new Forecast();
         $code = 12345;
