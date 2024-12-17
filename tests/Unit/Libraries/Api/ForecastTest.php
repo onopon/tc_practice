@@ -24,13 +24,8 @@ class ForecastTest extends TestCase
         $f = new Forecast();
         $code = 12345;
         $result = $f->loadOverviewText($code);
-<<<<<<< HEAD
-        // Q11 - 2 $this->getDummyJson()のtextが$resultで返ってくるテストを書いてください。
-        $this->assertEquals(json_decode($this->getDummyJson(), true)['text'], $result);
-=======
         // Q9 - 2 $this->getDummyJson()のtextが$resultで返ってくるテストを書いてください。
-
->>>>>>> origin
+        $this->assertEquals(json_decode($this->getDummyJson(), true)['text'], $result);
     }
 
     public function test_loadOverviewText_apiResult404()

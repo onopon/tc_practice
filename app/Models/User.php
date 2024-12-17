@@ -91,8 +91,7 @@ class User extends Authenticatable
      **/
     public function getSign()
     {
-<<<<<<< HEAD
-        // Q9 - 1 本メソッドのロジックを書いてください。
+        // Q11 - 1 本メソッドのロジックを書いてください。
         $datetime = new DateTime($this->birthday);
         $monthDate = (int)"{$datetime->format('n')}{$datetime->format('j')}";
         if ((int)"0121" <= $monthDate && $monthDate <= (int)"0218") {
@@ -121,9 +120,5 @@ class User extends Authenticatable
             // 1222 - 0120
             return "山羊座";
         }
-=======
-        // Q11 - 1 本メソッドのロジックを書いてください。
-        return '乙女座';
->>>>>>> origin
     }
 }
