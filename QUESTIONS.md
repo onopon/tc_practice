@@ -10,7 +10,7 @@
 
 　自身のコードとの差異を発見と捉え、楽しみながら確認してみてください^^
 
-## Q1
+## Q1 ☆
 
 tests/Unit/Libraries/PasswordUtilTest.php
 
@@ -22,19 +22,19 @@ app/Libraries/PasswordUtil.php
 
 で確認できます。
 
-## Q2
+## Q2 ☆
 
 tests/Unit/Libraries/PasswordUtilTest.php
 
 に存在するtest_isCorrectFalseのテストケースを完成させてください。
 
-## Q3
+## Q3 ☆
 
 app/Models/Role.php
 
 に存在するexistsメソッドのロジックを完成させ、skipしているテストコードが通るようにしてください。
 
-## Q4
+## Q4 ☆
 
 tests/Unit/Models/UserTest.php
 
@@ -57,13 +57,13 @@ tests/Unit/Models/UserTest.php
 
 このテストケースでは、「ログインIDは合っているけど、passowrdに誤りがある」場合のテストケースを書こうとしています。
 
-## Q6
+## Q6 ☆
 
 tests/Feature/Controllers/LogoutControllerTest.php
 
 にてtest_attemptのテストケースを完成させてください。
 
-## Q7
+## Q7 ☆
 
 tests/Feature/Controllers/LoginControllerTest.php
 
@@ -90,7 +90,25 @@ A. User::findWithメソッドのテストケースを2パターン用意して�
 
 　 1パターンのみのテストケースさえ書けば必要十分であると考えられるためです。
 
-## Q9
+## Q9 ☆
+
+app/Libraries/Api/Forecast.php
+
+に存在するloadOverviewTextのテストを書いてください。
+
+その際Mockeryを利用し、\GuzzleHttp\Clientのrequest->getBody->getContents をmockし、
+
+もしgetContentsがロジック内で呼ばれたら、$this->getDummyJson() が呼ばれるようにしてください。
+
+（mockの仕方はtest_loadOverviewText_apiResult404を参考にしてください。）
+
+## Q10 ☆
+
+tests/Feature/Controllers/MyPageControllerTest.php
+
+に存在するtest_mypageのテストケースを完成させ、skipを解除してください。
+
+## Q11
 
 app/Models/User.php
 
@@ -113,10 +131,11 @@ app/Models/User.php
 - 水瓶座: 01/21 - 02/18
 - 魚座  : 02/19 - 03/20
 
-## Q10
+## Q12
 
 全体のテストを実行した際のカバレッジを100%にしてください。
 
+<<<<<<< HEAD:ANSWERME.md
 ## Q11 (2024/02/20 updated)
 
 app/Libraries/Api/Forecast.php
@@ -129,6 +148,8 @@ app/Libraries/Api/Forecast.php
 
 （mockの仕方はtest_loadOverviewText_apiResult404を参考にしてください。）
 
+=======
+>>>>>>> origin:QUESTIONS.md
 ---
 
 お疲れ様でした！
