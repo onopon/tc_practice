@@ -20,7 +20,7 @@ services:
   db:
     networks:
       - internal
-    image: mysql:5.7
+    image: mysql:8.4
     container_name: tc-practice-db
     environment:
       MYSQL_ROOT_PASSWORD: root

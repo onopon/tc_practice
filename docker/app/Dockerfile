@@ -1,5 +1,5 @@
 # どんなdockerイメージを利用して構築をするか
-FROM php:7.4-apache
+FROM php:8.4-apache
 
 # 設定ファイルをdockerコンテナ内のPHP、Apacheに読み込ませる
 ADD php.ini /usr/local/etc/php/
