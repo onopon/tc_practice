@@ -14,14 +14,14 @@ class ForecastTest extends TestCase
         $mock->shouldReceive('request->getStatusCode')
                          ->once()
                          ->andReturn(200);
-        // Q11 - 1 \GuzzleHttp\Clientのrequest->getBody->getContentsをmockし、
+        // Q9 - 1 \GuzzleHttp\Clientのrequest->getBody->getContentsをmockし、
         // もしgetContentsがロジック内で呼ばれたら、$this->getDummyJson() が返るようにしてください。
 
         $this->markTestSkipped('skip');
         $f = new Forecast();
         $code = 12345;
         $result = $f->loadOverviewText($code);
-        // Q11 - 2 $this->getDummyJson()のtextが$resultで返ってくるテストを書いてください。
+        // Q9 - 2 $this->getDummyJson()のtextが$resultで返ってくるテストを書いてください。
 
     }
 

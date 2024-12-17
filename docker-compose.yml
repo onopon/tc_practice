@@ -1,6 +1,8 @@
 version: '3'
 services:
   app:
+    networks:
+      - internal
     ports:
       - "8000:80"
     build: ./docker/app
@@ -14,7 +16,10 @@ services:
       retries: 0
     environment:
       TZ: 'Asia/Tokyo'
+
   db:
+    networks:
+      - internal
     image: mysql:5.7
     container_name: tc-practice-db
     environment:
@@ -34,7 +39,10 @@ services:
       - 3307:3306
     expose:
       - 3307
+
   phpunit:
+    networks:
+      - internal
     build: ./docker/phpunit
     container_name: tc-practice-phpunit
     environment:
@@ -44,3 +52,7 @@ services:
     volumes:
       - ./:/src
     tty: true
+
+networks:
+  internal:
+    driver: bridge

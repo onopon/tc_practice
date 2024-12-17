@@ -91,7 +91,7 @@ class User extends Authenticatable
      **/
     public function getSign()
     {
-        // Q9 - 1 本メソッドのロジックを書いてください。
+        // Q11 - 1 本メソッドのロジックを書いてください。
         return '乙女座';
     }
 }

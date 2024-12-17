@@ -22,7 +22,7 @@
 
 このリポジトリのソースコード内の至るところにクイズ形式で散りばめております。
 
-クイズの一覧は、 [ANSWERME.md](/ANSWERME.md) に記載しております。
+クイズの一覧は、 [QUESTIONS.md](/QUESTIONS.md) に記載しております。
 
 また本クイズを進める上で必要となるディレクトリの構造は、 [DIRECTORY_STRUCTURE.txt](/DIRECTORY_STRUCTURE.txt) をご確認ください。
 

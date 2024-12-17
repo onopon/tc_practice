@@ -9,6 +9,13 @@ use \App\Libraries\Api\Forecast;
 
 class UserController extends Controller
 {
+    protected $forecastApi;
+
+    public function __construct(Forecast $forecastApi)
+    {
+        $this->forecastApi = $forecastApi;
+    }
+
     public function login()
     {
         return view('user/login');
@@ -17,7 +24,7 @@ class UserController extends Controller
     public function mypage()
     {
         $user = Auth::user();
-        $forecast = (new Forecast())->loadOverviewText();
+        $forecast = $this->forecastApi->loadOverviewText();
         return view('user/index', compact('user', 'forecast'));
     }
 }
