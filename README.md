@@ -9,6 +9,10 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+2024/12/22 PHP Conference 2024にて、「テストコード書いてみませんか？」というタイトルで発表を行いました💡
+https://speakerdeck.com/onopon/tesutokodoshu-itemimasenka
+https://fortee.jp/phpcon-2024/proposal/f1473725-d50a-4fae-8045-d13ec9e49b05
+
 ## TC practiceとは
 
 本リポジトリは、テストコードの書き方を学びたい人向けのチュートリアルリポジトリです。
