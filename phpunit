@@ -1,1 +1,1 @@
-docker-compose run --rm phpunit vendor/bin/phpunit $@
+docker compose run --rm phpunit vendor/bin/phpunit $@
