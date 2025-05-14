@@ -100,7 +100,7 @@ testing環境で利用します。CUI上でテストが実行できるように�
 下記コマンドを実行してください。
 
 ```
-docker-compose up -d
+docker compose up -d
 ```
 
 `sh ./initial_run.sh` でも立ち上がってはくれますが、様々な処理を挟むため時間がかかります。
@@ -110,7 +110,7 @@ docker-compose up -d
 下記コマンドを実行してください。
 
 ```
-docker-compose down
+docker compose down
 ```
 
 ## dockerコンテナ内でbashシェルを利用する方法
@@ -122,20 +122,20 @@ docker-compose down
 ### appコンテナに入りたい場合
 
 ```
-docker-compose exec app bash
+docker compose exec app bash
 ```
 
 ### dbコンテナに入りrootでmysqlを起動したい場合
 
 ```
-docker-compose exec db bash
+docker compose exec db bash
 mysql -uroot -proot
 ```
 
 ### phpunitコンテナに入りテストを手動で実行したい場合
 
 ```
-docker-compose exec phpunit bash
+docker compose exec phpunit bash
 ./vendor/bin/phpunit
 ```
 
