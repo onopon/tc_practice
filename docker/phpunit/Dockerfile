@@ -1,4 +1,4 @@
-FROM php:8.0-cli
+FROM php:8.4-cli
 
 ADD php.ini /usr/local/etc/php/
 
